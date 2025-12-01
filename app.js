@@ -1,114 +1,151 @@
-// Get DOM elements
-const runbookEditor = document.getElementById('runbookEditor');
-const messageInput = document.getElementById('messageInput');
+// DOM Elements
+const editor = document.getElementById('editor');
+const chatInput = document.getElementById('chatInput');
 const sendBtn = document.getElementById('sendBtn');
 const publishBtn = document.querySelector('.publish-btn');
 const integrationToggle = document.querySelector('.integration-toggle');
+const sidebarToggle = document.querySelector('.sidebar-toggle');
+const sidebar = document.querySelector('.sidebar');
 
-// Message input functionality
-if (messageInput && sendBtn) {
-    const handleSend = () => {
-        const message = messageInput.value.trim();
+// Editor functionality
+if (editor) {
+    // Focus editor on click
+    editor.addEventListener('focus', () => {
+        // Place cursor at end if empty
+    });
+
+    // Handle keyboard shortcuts
+    editor.addEventListener('keydown', (e) => {
+        // Ctrl/Cmd + B for bold
+        if ((e.ctrlKey || e.metaKey) && e.key === 'b') {
+            e.preventDefault();
+            document.execCommand('bold', false, null);
+        }
+        // Ctrl/Cmd + I for italic
+        if ((e.ctrlKey || e.metaKey) && e.key === 'i') {
+            e.preventDefault();
+            document.execCommand('italic', false, null);
+        }
+    });
+}
+
+// Chat input functionality
+if (chatInput && sendBtn) {
+    const sendMessage = () => {
+        const message = chatInput.value.trim();
         if (message) {
-            console.log('Sending message:', message);
-            // Here you would typically send the message to a backend
-            messageInput.value = '';
-            messageInput.focus();
+            console.log('Sending:', message);
+            // Add message to activity panel
+            const activityContent = document.querySelector('.activity-content');
+            if (activityContent) {
+                const msgEl = document.createElement('div');
+                msgEl.style.cssText = 'padding: 0.75rem; background: #f5f5f5; border-radius: 8px; margin-bottom: 0.5rem; font-size: 0.875rem;';
+                msgEl.textContent = message;
+                activityContent.appendChild(msgEl);
+                
+                // Update header
+                const header = document.querySelector('.activity-header');
+                if (header) {
+                    header.textContent = 'Activity';
+                }
+            }
+            chatInput.value = '';
         }
     };
 
-    sendBtn.addEventListener('click', handleSend);
-
-    messageInput.addEventListener('keydown', (e) => {
+    sendBtn.addEventListener('click', sendMessage);
+    
+    chatInput.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault();
-            handleSend();
+            sendMessage();
         }
     });
-
-    // Focus message input on load
-    messageInput.focus();
 }
 
 // Publish button
 if (publishBtn) {
     publishBtn.addEventListener('click', () => {
-        const content = runbookEditor ? runbookEditor.textContent : '';
-        console.log('Publishing runbook:', content);
-        // Here you would typically save/publish the runbook
-        alert('Runbook published! (This is a demo)');
+        const content = editor ? editor.innerHTML : '';
+        console.log('Publishing:', content);
+        
+        // Visual feedback
+        const originalHTML = publishBtn.innerHTML;
+        publishBtn.innerHTML = '<span>Published!</span>';
+        publishBtn.style.background = '#10b981';
+        
+        setTimeout(() => {
+            publishBtn.innerHTML = originalHTML;
+            publishBtn.style.background = '';
+        }, 2000);
     });
 }
 
 // Integration toggle
 if (integrationToggle) {
     integrationToggle.addEventListener('click', () => {
-        const arrow = integrationToggle.querySelector('.toggle-arrow');
-        if (arrow) {
-            const isExpanded = arrow.style.transform === 'rotate(90deg)';
-            arrow.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(90deg)';
-        }
-        // Here you would toggle integration details
+        integrationToggle.classList.toggle('expanded');
     });
 }
 
-// Navigation items
-document.querySelectorAll('.nav-item').forEach(item => {
-    item.addEventListener('click', () => {
-        // Remove active class from all nav items in the same parent
-        const parent = item.closest('.sidebar-nav, .sidebar-footer');
-        if (parent) {
-            parent.querySelectorAll('.nav-item').forEach(nav => {
-                nav.classList.remove('active');
-            });
-        }
-        // Add active class to clicked item
-        item.classList.add('active');
-        
-        // Here you would navigate to the selected page
-        console.log('Navigating to:', item.querySelector('span').textContent);
+// Sidebar toggle (mobile)
+if (sidebarToggle && sidebar) {
+    sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
     });
-});
+}
 
 // Formatting toolbar buttons
 document.querySelectorAll('.toolbar-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        e.preventDefault();
+    btn.addEventListener('click', () => {
         const action = btn.getAttribute('title');
-        console.log('Formatting action:', action);
         
-        if (!runbookEditor) return;
+        if (!editor) return;
+        editor.focus();
         
-        // Basic formatting actions
-        if (action === 'Bold') {
-            document.execCommand('bold', false, null);
-        } else if (action === 'Italic') {
-            document.execCommand('italic', false, null);
-        } else if (action === 'Heading') {
-            document.execCommand('formatBlock', false, '<h2>');
-        } else if (action === 'Bullet List') {
-            document.execCommand('insertUnorderedList', false, null);
-        } else if (action === 'Numbered List') {
-            document.execCommand('insertOrderedList', false, null);
-        } else if (action === 'Undo') {
-            document.execCommand('undo', false, null);
-        } else if (action === 'Redo') {
-            document.execCommand('redo', false, null);
+        switch (action) {
+            case 'Bold':
+                document.execCommand('bold', false, null);
+                break;
+            case 'Italic':
+                document.execCommand('italic', false, null);
+                break;
+            case 'Heading':
+                document.execCommand('formatBlock', false, '<h2>');
+                break;
+            case 'Bullet List':
+                document.execCommand('insertUnorderedList', false, null);
+                break;
+            case 'Numbered List':
+                document.execCommand('insertOrderedList', false, null);
+                break;
+            case 'Undo':
+                document.execCommand('undo', false, null);
+                break;
+            case 'Redo':
+                document.execCommand('redo', false, null);
+                break;
         }
-        
-        runbookEditor.focus();
     });
 });
 
-// Initialize editor
-if (runbookEditor) {
-    runbookEditor.addEventListener('input', () => {
-        // Auto-save or update preview could go here
+// Navigation handling
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Remove active from all
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        
+        // Add active to clicked
+        link.classList.add('active');
+        
+        // Close mobile sidebar
+        if (sidebar) {
+            sidebar.classList.remove('open');
+        }
     });
+});
 
-    runbookEditor.addEventListener('focus', () => {
-        // Editor focused
-    });
-}
+console.log('Run.so initialized');
 
-console.log('run.so application initialized');
