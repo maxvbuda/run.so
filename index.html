@@ -3,77 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>run.so - Code Playground</title>
+    <title>run.so - Automation Platform</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="logo">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="32" height="32" rx="6" fill="#6366F1"/>
-                    <path d="M10 22L22 10M22 10H14M22 10V18" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span>run.so</span>
-            </div>
-            <nav class="nav">
-                <button class="btn btn-secondary" id="shareBtn">Share</button>
-                <button class="btn btn-primary" id="runBtn">
-                    <span>Run</span>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M3 3L13 8L3 13V3Z" fill="currentColor"/>
+    <div class="app-container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-item active">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M3 4C3 3.44772 3.44772 3 4 3H6C6.55228 3 7 3.44772 7 4V6C7 6.55228 6.55228 7 6 7H4C3.44772 7 3 6.55228 3 6V4Z" fill="currentColor"/>
+                        <path d="M3 14C3 13.4477 3.44772 13 4 13H6C6.55228 13 7 13.4477 7 14V16C7 16.5523 6.55228 17 6 17H4C3.44772 17 3 16.5523 3 16V14Z" fill="currentColor"/>
+                        <path d="M13 4C13 3.44772 13.4477 3 14 3H16C16.5523 3 17 3.44772 17 4V6C17 6.55228 16.5523 7 16 7H14C13.4477 7 13 6.55228 13 6V4Z" fill="currentColor"/>
+                        <path d="M13 14C13 13.4477 13.4477 13 14 13H16C16.5523 13 17 13.4477 17 14V16C17 16.5523 16.5523 17 16 17H14C13.4477 17 13 16.5523 13 16V14Z" fill="currentColor"/>
                     </svg>
-                </button>
-            </nav>
-        </header>
-
-        <main class="main">
-            <div class="editor-panel">
-                <div class="editor-header">
-                    <select id="languageSelect" class="language-select">
-                        <option value="javascript">JavaScript</option>
-                        <option value="python">Python</option>
-                        <option value="html">HTML</option>
-                        <option value="css">CSS</option>
-                        <option value="typescript">TypeScript</option>
-                        <option value="java">Java</option>
-                        <option value="cpp">C++</option>
-                        <option value="rust">Rust</option>
-                    </select>
-                    <div class="editor-actions">
-                        <button class="icon-btn" id="formatBtn" title="Format Code">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M4 4H12M4 8H12M4 12H8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                            </svg>
-                        </button>
-                        <button class="icon-btn" id="clearBtn" title="Clear">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                            </svg>
-                        </button>
-                    </div>
+                    <span>Dashboard</span>
                 </div>
-                <textarea id="codeEditor" class="code-editor" placeholder="Write your code here..."></textarea>
+                <div class="nav-item active">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 4H16V16H4V4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 8H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M8 4V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <span>Runbooks</span>
+                </div>
+                <div class="nav-item">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M10 6V10L13 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <span>Status</span>
+                </div>
+                <div class="nav-item">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 5L10 2L16 5V10C16 14 10 17 10 17C10 17 4 14 4 10V5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10 2V10M10 10L4 7M10 10L16 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>▷ Runs</span>
+                </div>
+                <div class="nav-item">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 3L3 7L10 11L17 7L10 3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 13L10 17L17 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 10L10 14L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Integrations</span>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="nav-item">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M10 6V10L13 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <span>Settings</span>
+                </div>
+                <div class="nav-item">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18Z" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M10 6V10M10 14H10.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <span>Get Help</span>
+                </div>
+                <div class="user-profile">
+                    <div class="user-avatar">MA</div>
+                    <div class="user-info">
+                        <div class="user-name">Max Buda</div>
+                        <div class="user-email">maxvbuda@gmail.com</div>
+                    </div>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="user-menu-icon">
+                        <circle cx="8" cy="4" r="1" fill="currentColor"/>
+                        <circle cx="8" cy="8" r="1" fill="currentColor"/>
+                        <circle cx="8" cy="12" r="1" fill="currentColor"/>
+                    </svg>
+                </div>
             </div>
+        </aside>
 
-            <div class="output-panel">
-                <div class="output-header">
-                    <span>Output</span>
-                    <button class="icon-btn" id="clearOutputBtn" title="Clear Output">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                        </svg>
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="run-logo-btn">
+                        <span class="run-logo">>> Run</span>
                     </button>
                 </div>
-                <div id="output" class="output"></div>
+                <div class="header-center">
+                    <nav class="breadcrumbs">
+                        <span class="breadcrumb-item">Max</span>
+                        <span class="breadcrumb-separator">/</span>
+                        <span class="breadcrumb-item">Runbooks</span>
+                        <span class="breadcrumb-separator">/</span>
+                        <span class="breadcrumb-item active">New runbook</span>
+                    </nav>
+                </div>
+                <div class="header-right">
+                    <button class="icon-btn-header">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M3 4H17M3 8H17M3 12H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <button class="icon-btn-header">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M4 4L10 2L16 4V10C16 14 10 17 10 17C10 17 4 14 4 10V4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10 2V10M10 10L4 7M10 10L16 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="publish-btn">Publish</button>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="content-wrapper">
+                <div class="editor-area">
+                    <div class="runbook-editor">
+                        <div class="editor-content" contenteditable="true" id="runbookEditor" placeholder="Write your runbook instructions here...">
+                            go to <a href="https://maxvbuda.github.io/bock-bock-chicken/chat-with-peep.html" target="_blank">https://maxvbuda.github.io/bock-bock-chicken/chat-with-peep.html</a> and chat with him
+                        </div>
+                        <div class="editor-tags">
+                            <span class="tag">Max</span>
+                        </div>
+                        <div class="formatting-toolbar">
+                        <button class="toolbar-btn" title="Bold">
+                            <strong>B</strong>
+                        </button>
+                        <button class="toolbar-btn" title="Italic">
+                            <em>I</em>
+                        </button>
+                        <button class="toolbar-btn" title="Heading">
+                            <strong>H</strong>
+                        </button>
+                        <button class="toolbar-btn" title="Bullet List">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <circle cx="4" cy="8" r="1" fill="currentColor"/>
+                                <path d="M8 8H15M8 4H15M8 12H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <button class="toolbar-btn" title="Numbered List">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M4 3V5H2M4 13H2V11H4M2 8H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M8 4H15M8 8H15M8 12H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <div class="toolbar-divider"></div>
+                        <button class="toolbar-btn" title="Undo">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M3 8C3 11.866 6.134 15 10 15M3 8L6 5M3 8L6 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <button class="toolbar-btn" title="Redo">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M13 8C13 4.13401 9.86599 1 6 1M13 8L10 5M13 8L10 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="toolbar-divider"></div>
+                        <button class="toolbar-btn" title="More Options">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <rect x="2" y="2" width="3" height="3" fill="currentColor"/>
+                                <rect x="6.5" y="2" width="3" height="3" fill="currentColor"/>
+                                <rect x="11" y="2" width="3" height="3" fill="currentColor"/>
+                                <rect x="2" y="6.5" width="3" height="3" fill="currentColor"/>
+                                <rect x="6.5" y="6.5" width="3" height="3" fill="currentColor"/>
+                                <rect x="11" y="6.5" width="3" height="3" fill="currentColor"/>
+                                <rect x="2" y="11" width="3" height="3" fill="currentColor"/>
+                                <rect x="6.5" y="11" width="3" height="3" fill="currentColor"/>
+                                <rect x="11" y="11" width="3" height="3" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="activity-panel">
+                    <div class="activity-header">No activity yet</div>
+                    <div class="activity-content">
+                        <p class="activity-placeholder">Activity and logs will appear here when you run this runbook.</p>
+                    </div>
+                </aside>
             </div>
-        </main>
+        </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="footer-left">
+            <div class="footer-label">MANAGE INTEGRATIONS</div>
+            <div class="integration-item">
+                <button class="integration-toggle">
+                    <span class="toggle-arrow">></span>
+                    <span>Browserbase</span>
+                </button>
+                <span class="integration-count">1</span>
+            </div>
+        </div>
+        <div class="footer-right">
+            <div class="message-input-wrapper">
+                <input type="text" class="message-input" placeholder="Type your message..." id="messageInput">
+                <button class="send-btn" id="sendBtn">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M18 2L9 11M18 2L12 18L9 11M18 2L2 8L9 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </footer>
 
     <script src="app.js"></script>
 </body>
 </html>
-
