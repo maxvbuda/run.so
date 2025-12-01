@@ -1,231 +1,337 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Run - Automation Platform</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="app">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <div class="logo">
-                    <span class="logo-icon">>></span>
-                    <span class="logo-text">Run</span>
-                </div>
-            </div>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="modulepreload" href="/assets/entry.client-oqJ-MZ6S.js"/><link rel="modulepreload" href="/assets/jsx-runtime-u17CrQMm.js"/><link rel="modulepreload" href="/assets/chunk-4WY6JWTD-CZjKRnnR.js"/><link rel="modulepreload" href="/assets/index-NqqQHLOO.js"/><link rel="modulepreload" href="/assets/client.gen-DQ3fV-1R.js"/><link rel="modulepreload" href="/assets/root-DZDAJlIh.js"/><link rel="modulepreload" href="/assets/QueryClientProvider-CUkuPqX8.js"/><link rel="modulepreload" href="/assets/useRouter-BYWojqwV.js"/><link rel="modulepreload" href="/assets/_dashboard-DvAQKA3l.js"/><link rel="modulepreload" href="/assets/useUser-CvZGBxG4.js"/><link rel="modulepreload" href="/assets/dropdown-menu-BuoTGyK6.js"/><link rel="modulepreload" href="/assets/createReactComponent-BQkwcBKs.js"/><link rel="modulepreload" href="/assets/translate-DuWSlvJh.js"/><link rel="modulepreload" href="/assets/IconSettings-ByAuoZDZ.js"/><link rel="modulepreload" href="/assets/IconPuzzle-xBjjC0JE.js"/><link rel="modulepreload" href="/assets/tooltip-paWq04JM.js"/><link rel="modulepreload" href="/assets/cn-BEHD0UYf.js"/><link rel="modulepreload" href="/assets/index-1gJ03Y-f.js"/><link rel="modulepreload" href="/assets/index-CqEX-Awu.js"/><link rel="modulepreload" href="/assets/index-BFdU34aF.js"/><link rel="modulepreload" href="/assets/index-B52uz_EB.js"/><link rel="modulepreload" href="/assets/_dashboard.runbook._id-DKLQzZFH.js"/><link rel="modulepreload" href="/assets/JSONSchemaForm-CrOHZ605.js"/><link rel="modulepreload" href="/assets/input-V3NTW0LT.js"/><link rel="modulepreload" href="/assets/label-Cn3EVoAH.js"/><link rel="modulepreload" href="/assets/popover-OVvo3o-n.js"/><link rel="modulepreload" href="/assets/select-BLSKHzXh.js"/><link rel="modulepreload" href="/assets/Header-DNL28lfG.js"/><link rel="modulepreload" href="/assets/plus-JzH8_nWv.js"/><link rel="modulepreload" href="/assets/chevron-down-B3CbQLru.js"/><link rel="modulepreload" href="/assets/arrow-right-5y1PkqhK.js"/><link rel="modulepreload" href="/assets/badge-BsUN7bAY.js"/><link rel="modulepreload" href="/assets/AuditLogViewer-C6PMzsbW.js"/><link rel="modulepreload" href="/assets/IconChevronsRight-BEencwST.js"/><link rel="modulepreload" href="/assets/check-yatE5vw6.js"/><link rel="modulepreload" href="/assets/index-YWQ3D65v.js"/><link rel="modulepreload" href="/assets/envDetection-C7UwCOda.js"/><link rel="modulepreload" href="/assets/json-view-L_WwL8R5.js"/><link rel="modulepreload" href="/assets/dates-C20fioLD.js"/><link rel="stylesheet" href="/assets/root-rZsAoWy6.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap"/><link rel="stylesheet" href="/assets/AuditLogViewer-B9Z7D9kT.css"/></head><body><div class="flex h-screen bg-sidebar"><div data-slot="sidebar-wrapper" style="--sidebar-width:calc(var(--spacing) * 64);--sidebar-width-icon:3rem;--header-height:calc(var(--spacing) * 12)" class="group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex min-h-svh w-full"><div class="absolute top-0 left-0 w-full h-1 overflow-hidden pointer-events-none z-overlay"><div class="loading-indicator w-full absolute top-0 left-0 bg-linear-to-r from-red-200 via-red-400 to-red-200 transition-all h-0"><style>
 
-            <nav class="sidebar-nav">
-                <a href="#" class="nav-link">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M12 6v6l4 2"/>
-                    </svg>
-                    <span>Dashboard</span>
-                </a>
-                <a href="#" class="nav-link active">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="3" width="18" height="18" rx="2"/>
-                        <path d="M3 9h18"/>
-                        <path d="M9 21V9"/>
-                    </svg>
-                    <span>Runbooks</span>
-                </a>
-                <a href="#" class="nav-link">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                    </svg>
-                    <span>Status</span>
-                </a>
-                <a href="#" class="nav-link">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="5 3 19 12 5 21 5 3"/>
-                    </svg>
-                    <span>Runs</span>
-                </a>
-                <a href="#" class="nav-link">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                        <polyline points="22,6 12,13 2,6"/>
-                    </svg>
-                    <span>Integrations</span>
-                </a>
-            </nav>
 
-            <div class="sidebar-footer">
-                <a href="#" class="nav-link">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="3"/>
-                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-                    </svg>
-                    <span>Settings</span>
-                </a>
-                <a href="#" class="nav-link">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-                        <line x1="12" y1="17" x2="12.01" y2="17"/>
-                    </svg>
-                    <span>Get Help</span>
-                </a>
 
-                <div class="user-profile">
-                    <div class="user-avatar">MA</div>
-                    <div class="user-info">
-                        <div class="user-name">Max Buda</div>
-                        <div class="user-email">maxvbuda@gmail.com</div>
-                    </div>
-                    <button class="user-menu-btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <circle cx="12" cy="5" r="2"/>
-                            <circle cx="12" cy="12" r="2"/>
-                            <circle cx="12" cy="19" r="2"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </aside>
+      .loading-indicator {
 
-        <!-- Main Content -->
-        <main class="main">
-            <!-- Top Header -->
-            <header class="header">
-                <button class="header-btn sidebar-toggle">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="3" width="18" height="18" rx="2"/>
-                        <path d="M9 3v18"/>
-                    </svg>
-                </button>
+        animation: loadingAnimation 3s infinite;
 
-                <nav class="breadcrumbs">
-                    <span class="breadcrumb">Max</span>
-                    <span class="breadcrumb-sep">/</span>
-                    <span class="breadcrumb">Runbooks</span>
-                    <span class="breadcrumb-sep">/</span>
-                    <span class="breadcrumb current">New runbook</span>
-                </nav>
+      }
 
-                <div class="header-actions">
-                    <button class="header-btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="3" y1="6" x2="21" y2="6"/>
-                            <line x1="3" y1="12" x2="21" y2="12"/>
-                            <line x1="3" y1="18" x2="15" y2="18"/>
-                        </svg>
-                    </button>
-                    <button class="header-btn run-btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="5 3 19 12 5 21 5 3"/>
-                        </svg>
-                    </button>
-                    <button class="publish-btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <line x1="2" y1="12" x2="22" y2="12"/>
-                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                        </svg>
-                        <span>Publish</span>
-                    </button>
-                </div>
-            </header>
+      @keyframes loadingAnimation {
 
-            <!-- Content Area -->
-            <div class="content-area">
-                <!-- Editor -->
-                <div class="editor-container">
-                    <div class="editor" contenteditable="true" id="editor">
-                        <p>go to <a href="https://maxvbuda.github.io/bock-bock-chicken/chat-with-peep.html" target="_blank">https://maxvbuda.github.io/bock-bock-chicken/chat-with-peep.html</a> and chat with him</p>
-                    </div>
+        0% {
 
-                    <div class="editor-meta">
-                        <span class="tag">Max</span>
-                    </div>
+        transform: translateX(-100%);
 
-                    <!-- Formatting Toolbar -->
-                    <div class="formatting-toolbar">
-                        <button class="toolbar-btn" title="Bold"><strong>B</strong></button>
-                        <button class="toolbar-btn" title="Italic"><em>I</em></button>
-                        <div class="toolbar-divider"></div>
-                        <button class="toolbar-btn" title="Heading"><strong>H</strong></button>
-                        <div class="toolbar-divider"></div>
-                        <button class="toolbar-btn" title="Bullet List">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="8" y1="6" x2="21" y2="6"/>
-                                <line x1="8" y1="12" x2="21" y2="12"/>
-                                <line x1="8" y1="18" x2="21" y2="18"/>
-                                <circle cx="4" cy="6" r="1" fill="currentColor"/>
-                                <circle cx="4" cy="12" r="1" fill="currentColor"/>
-                                <circle cx="4" cy="18" r="1" fill="currentColor"/>
-                            </svg>
-                        </button>
-                        <button class="toolbar-btn" title="Numbered List">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="10" y1="6" x2="21" y2="6"/>
-                                <line x1="10" y1="12" x2="21" y2="12"/>
-                                <line x1="10" y1="18" x2="21" y2="18"/>
-                                <text x="3" y="8" font-size="8" fill="currentColor">1</text>
-                                <text x="3" y="14" font-size="8" fill="currentColor">2</text>
-                                <text x="3" y="20" font-size="8" fill="currentColor">3</text>
-                            </svg>
-                        </button>
-                        <div class="toolbar-divider"></div>
-                        <button class="toolbar-btn" title="Undo">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M3 7v6h6"/>
-                                <path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"/>
-                            </svg>
-                        </button>
-                        <button class="toolbar-btn" title="Redo">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 7v6h-6"/>
-                                <path d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3L21 13"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
+        }
 
-                <!-- Activity Panel -->
-                <aside class="activity-panel">
-                    <div class="activity-header">No activity yet</div>
-                    <div class="activity-content">
-                        <!-- Activity items would appear here -->
-                    </div>
-                    <div class="chat-input-container">
-                        <input type="text" class="chat-input" placeholder="Type your message..." id="chatInput">
-                        <button class="send-btn" id="sendBtn">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="22" y1="2" x2="11" y2="13"/>
-                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-                            </svg>
-                        </button>
-                    </div>
-                </aside>
-            </div>
+        50% {
 
-            <!-- Footer -->
-            <footer class="footer">
-                <div class="integrations-section">
-                    <div class="integrations-label">MANAGE INTEGRATIONS</div>
-                    <div class="integration-item">
-                        <button class="integration-toggle">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="toggle-icon">
-                                <path d="M9 18l6-6-6-6"/>
-                            </svg>
-                            <span>Browserbase</span>
-                        </button>
-                        <span class="integration-badge">1</span>
-                    </div>
-                </div>
-            </footer>
-        </main>
-    </div>
+        transform: translateX(0);
 
-    <script src="app.js"></script>
-</body>
-</html>
+        }
 
+        100% {
+
+        transform: translateX(100%);
+
+        }
+
+      }
+
+      </style></div></div><div class="group peer text-sidebar-foreground hidden md:block" data-state="expanded" data-collapsible="" data-variant="sidebar" data-side="left" data-slot="sidebar"><div data-slot="sidebar-gap" class="relative w-(--sidebar-width) bg-transparent transition-[width] duration-200 ease-linear group-data-[collapsible=offcanvas]:w-0 group-data-[side=right]:rotate-180 group-data-[collapsible=icon]:w-(--sidebar-width-icon)"></div><div data-slot="sidebar-container" class="fixed inset-y-0 z-10 hidden h-svh w-(--sidebar-width) transition-[left,right,width] duration-200 ease-linear md:flex left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)] group-data-[collapsible=icon]:w-(--sidebar-width-icon) group-data-[side=left]:border-r group-data-[side=right]:border-l border-none font-mono w-64 pt-2.5 pb-0.5"><div data-sidebar="sidebar" data-slot="sidebar-inner" class="bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm"><div data-slot="sidebar-header" data-sidebar="header" class="flex flex-col gap-2 p-2"><ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-1"><li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative cursor-pointer"><a data-slot="sidebar-menu-link" data-sidebar="menu-link" data-size="default" data-active="false" class="peer/menu-link flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-8 text-sm data-[slot=sidebar-menu-link]:p-1.5! cursor-pointer" href="/dashboard" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-right size-5!" aria-hidden="true"><path d="m6 17 5-5-5-5"></path><path d="m13 17 5-5-5-5"></path></svg><span class="text-base font-semibold">Run</span></a></li></ul></div><div data-slot="sidebar-content" data-sidebar="content" class="flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden"><div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col p-2"><div data-slot="sidebar-group-content" data-sidebar="group-content" class="w-full text-sm flex flex-col gap-2"><ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-1"><li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative cursor-pointer"><a data-slot="sidebar-menu-link" data-sidebar="menu-link" data-size="default" data-active="false" class="peer/menu-link flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-8 text-sm cursor-pointer" href="/dashboard" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-dashboard "><path d="M12 13m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path d="M13.45 11.55l2.05 -2.05"></path><path d="M6.4 20a9 9 0 1 1 11.2 0z"></path></svg><span>Dashboard</span></a></li><li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative cursor-pointer"><a data-slot="sidebar-menu-link" data-sidebar="menu-link" data-size="default" data-active="true" class="peer/menu-link flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-8 text-sm cursor-pointer" href="/runbooks" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-book-2 "><path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12z"></path><path d="M19 16h-12a2 2 0 0 0 -2 2"></path><path d="M9 8h6"></path></svg><span>Runbooks</span></a></li><li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative cursor-pointer"><a data-slot="sidebar-menu-link" data-sidebar="menu-link" data-size="default" data-active="false" class="peer/menu-link flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-8 text-sm cursor-pointer" href="/status" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list" aria-hidden="true"><path d="M3 5h.01"></path><path d="M3 12h.01"></path><path d="M3 19h.01"></path><path d="M8 5h13"></path><path d="M8 12h13"></path><path d="M8 19h13"></path></svg><span>Status</span></a></li><li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative cursor-pointer"><a data-slot="sidebar-menu-link" data-sidebar="menu-link" data-size="default" data-active="false" class="peer/menu-link flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-8 text-sm cursor-pointer" href="/runs" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-player-play "><path d="M7 4v16l13 -8z"></path></svg><span>Runs</span></a></li><li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative cursor-pointer"><a data-slot="sidebar-menu-link" data-sidebar="menu-link" data-size="default" data-active="false" class="peer/menu-link flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-8 text-sm cursor-pointer" href="/integrations" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-puzzle "><path d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1"></path></svg><span>Integrations</span></a></li></ul></div></div><div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col p-2 mt-auto"><div data-slot="sidebar-group-content" data-sidebar="group-content" class="w-full text-sm"><ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-1"><li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative cursor-pointer"><a data-slot="sidebar-menu-link" data-sidebar="menu-link" data-size="default" data-active="false" class="peer/menu-link flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-8 text-sm cursor-pointer" href="/settings" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-settings "><path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z"></path><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path></svg><span>Settings</span></a></li><li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative cursor-pointer"><a data-slot="sidebar-menu-link" data-sidebar="menu-link" data-size="default" data-active="false" class="peer/menu-link flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-8 text-sm cursor-pointer" href="/help" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-help "><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path><path d="M12 17l0 .01"></path><path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4"></path></svg><span>Get Help</span></a></li></ul></div></div></div><div data-slot="sidebar-footer" data-sidebar="footer" class="flex flex-col gap-2 p-2"><ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-1"><li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative cursor-pointer"><a data-slot="dropdown-menu-trigger" data-sidebar="menu-link" data-size="lg" data-active="false" class="peer/menu-link flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-12 text-sm group-data-[collapsible=icon]:p-0! data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground cursor-pointer" href="#" type="button" id="radix-_R_uj5_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><div class="mr-1 size-7"><svg width="29" height="29" viewBox="0 0 100 100" role="img" aria-label="Avatar for maxvbuda@gmail.com" style="display:flex;border-radius:50%"><defs><linearGradient id="_R_buj5_" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="hsl(216 72% 52%)"></stop><stop offset="100%" stop-color="hsl(310 72% 42%)"></stop></linearGradient></defs><rect x="0" y="0" width="100" height="100" fill="url(#_R_buj5_)" rx="50"></rect><rect x="0" y="0" width="100" height="100" fill="url(#shadow)" opacity="0.06"></rect><text x="50" y="65" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial" font-weight="700" font-size="44" fill="#fff" paint-order="stroke" stroke="rgba(0,0,0,0.25)" stroke-width="2">MA</text></svg></div><div class="grid flex-1 text-sm leading-tight text-left"><span class="font-medium truncate">Max Buda</span><span class="text-xs truncate text-muted-foreground">maxvbuda@gmail.com</span></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-dots-vertical ml-auto size-4"><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path></svg></a></li></ul></div></div></div></div><main data-slot="sidebar-inset" class="w-[calc(100vw-var(--sidebar-width))] overflow-x-hidden"><div class="relative flex flex-1 flex-col bg-background md:peer-data-[variant=inset]:m-2 md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-2"><div class="flex flex-col w-full h-screen"><header class="font-mono flex h-14 shrink-0 items-center gap-2 border-b transition-[width,height] ease-linear group-has-[data-collapsible=icon]/sidebar-wrapper:h-(--header-height)"><div class="flex items-center w-full gap-1 px-4 lg:gap-2 lg:px-6"><button data-slot="sidebar-trigger" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-hidden focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-7 -ml-1" data-sidebar="trigger"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-panel-left" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 3v18"></path></svg><span class="sr-only">Toggle Sidebar</span></button><div data-orientation="vertical" role="none" data-slot="separator" class="bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px mx-2 data-[orientation=vertical]:h-4"></div><nav aria-label="breadcrumb" data-slot="breadcrumb"><ol data-slot="breadcrumb-list" class="text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm wrap-break-word sm:gap-2.5"><li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5"><a href="/runbook/658a8afb-c57c-4c62-af4f-ad73385f495e" data-discover="true">Max</a></li><li data-slot="breadcrumb-separator" role="presentation" aria-hidden="true" class="[&amp;&gt;svg]:size-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-slash" aria-hidden="true"><path d="M22 2 2 22"></path></svg></li><li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5"><a href="/runbooks" data-discover="true">Runbooks</a></li><li data-slot="breadcrumb-separator" role="presentation" aria-hidden="true" class="[&amp;&gt;svg]:size-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-slash" aria-hidden="true"><path d="M22 2 2 22"></path></svg></li><li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5"><span data-slot="breadcrumb-page" role="link" aria-disabled="true" aria-current="page" class="text-foreground font-normal cursor-pointer hover:bg-muted px-2 py-0.5 -mx-2 -my-0.5 rounded transition-colors">New runbook</span></li></ol></nav><div class="flex justify-end flex-1"><a href="/status/658a8afb-c57c-4c62-af4f-ad73385f495e/cases" data-discover="true"><button data-slot="button" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-hidden focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-9 px-4 py-2 has-[&gt;svg]:px-3 mx-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list" aria-hidden="true"><path d="M3 5h.01"></path><path d="M3 12h.01"></path><path d="M3 19h.01"></path><path d="M8 5h13"></path><path d="M8 12h13"></path><path d="M8 19h13"></path></svg></button></a><button data-slot="button" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-hidden focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-9 px-4 py-2 has-[&gt;svg]:px-3 mx-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg></button><a href="/runbook/658a8afb-c57c-4c62-af4f-ad73385f495e/deploy" data-discover="true"><button data-slot="button" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-hidden focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-9 px-4 py-2 has-[&gt;svg]:px-3 mx-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>Publish</button></a></div></div></header><div class="flex flex-1 w-full h-[calc(100vh-92px)] overflow-hidden p-0"><div data-slot="resizable-panel-group" class="data-[panel-group-direction=vertical]:flex-col flex flex-1 w-full h-full" style="display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%" data-panel-group="" data-panel-group-direction="horizontal" data-panel-group-id="_R_1lr5_"><div data-slot="resizable-panel" class="h-full" id="left" style="flex-basis:0;flex-grow:60.000;flex-shrink:1;overflow:hidden" data-panel-group-id="_R_1lr5_" data-panel="" data-panel-id="left" data-panel-size="60.0"><div class="flex flex-col justify-between h-full border-r"><div class="flex flex-col h-full overflow-y-auto transition-all duration-200 rounded-sm"><div class="flex overflow-y-auto"><div class="flex-1 h-full overflow-x-hidden overflow-y-auto font-mono text-sm text-wrap"><div></div></div></div></div></div></div><div data-slot="resizable-handle" class="bg-border focus-visible:ring-ring relative flex items-center justify-center after:absolute after:inset-y-0 after:left-1/2 after:w-1 after:-translate-x-1/2 focus-visible:ring-1 focus-visible:ring-offset-1 focus-visible:outline-hidden data-[panel-group-direction=vertical]:h-px data-[panel-group-direction=vertical]:w-full data-[panel-group-direction=vertical]:after:left-0 data-[panel-group-direction=vertical]:after:h-1 data-[panel-group-direction=vertical]:after:w-full data-[panel-group-direction=vertical]:after:translate-x-0 data-[panel-group-direction=vertical]:after:-translate-y-1/2 [&amp;[data-panel-group-direction=vertical]&gt;div]:rotate-90 w-0" role="separator" style="touch-action:none;user-select:none" tabindex="0" data-panel-group-direction="horizontal" data-panel-group-id="_R_1lr5_" data-resize-handle="" data-panel-resize-handle-enabled="true" data-panel-resize-handle-id="_R_llr5_" data-resize-handle-state="inactive"><div class="bg-border z-10 flex h-4 w-3 items-center justify-center rounded-xs border"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-grip-vertical size-2.5" aria-hidden="true"><circle cx="9" cy="12" r="1"></circle><circle cx="9" cy="5" r="1"></circle><circle cx="9" cy="19" r="1"></circle><circle cx="15" cy="12" r="1"></circle><circle cx="15" cy="5" r="1"></circle><circle cx="15" cy="19" r="1"></circle></svg></div></div><div data-slot="resizable-panel" class="w-full h-full" id="right" style="flex-basis:0;flex-grow:1;flex-shrink:1;overflow:hidden" data-panel-group-id="_R_1lr5_" data-panel="" data-panel-id="right" data-panel-size="1.0"></div></div><div class="absolute overflow-y-auto border inset-0 bg-gray-300/70 backdrop-blur-md z-overlay transition-opacity duration-150 ease-in-out opacity-0 pointer-events-none"><div></div></div></div></div></div></main></div></div><script>((storageKey2, restoreKey) => {
+
+    if (!window.history.state || !window.history.state.key) {
+
+      let key = Math.random().toString(32).slice(2);
+
+      window.history.replaceState({ key }, "");
+
+    }
+
+    try {
+
+      let positions = JSON.parse(sessionStorage.getItem(storageKey2) || "{}");
+
+      let storedY = positions[restoreKey || window.history.state.key];
+
+      if (typeof storedY === "number") {
+
+        window.scrollTo(0, storedY);
+
+      }
+
+    } catch (error) {
+
+      console.error(error);
+
+      sessionStorage.removeItem(storageKey2);
+
+    }
+
+  })("react-router-scroll-positions", null)</script><script>window.__reactRouterContext = {"basename":"/","future":{"v8_middleware":false,"unstable_optimizeDeps":false,"unstable_splitRouteModules":false,"unstable_subResourceIntegrity":false,"unstable_viteEnvironmentApi":false},"routeDiscovery":{"mode":"lazy","manifestPath":"/__manifest"},"ssr":true,"isSpaMode":false};window.__reactRouterContext.stream = new ReadableStream({start(controller){window.__reactRouterContext.streamController = controller;}}).pipeThrough(new TextEncoderStream());</script><script type="module" async="">;
+
+import * as route0 from "/assets/root-DZDAJlIh.js";
+
+import * as route1 from "/assets/_dashboard-DvAQKA3l.js";
+
+import * as route2 from "/assets/_dashboard.runbook._id-DKLQzZFH.js";
+
+  window.__reactRouterManifest = {
+
+  "entry": {
+
+    "module": "/assets/entry.client-oqJ-MZ6S.js",
+
+    "imports": [
+
+      "/assets/jsx-runtime-u17CrQMm.js",
+
+      "/assets/chunk-4WY6JWTD-CZjKRnnR.js",
+
+      "/assets/index-NqqQHLOO.js",
+
+      "/assets/client.gen-DQ3fV-1R.js"
+
+    ],
+
+    "css": []
+
+  },
+
+  "routes": {
+
+    "root": {
+
+      "id": "root",
+
+      "path": "",
+
+      "hasAction": false,
+
+      "hasLoader": false,
+
+      "hasClientAction": false,
+
+      "hasClientLoader": false,
+
+      "hasClientMiddleware": false,
+
+      "hasErrorBoundary": true,
+
+      "module": "/assets/root-DZDAJlIh.js",
+
+      "imports": [
+
+        "/assets/jsx-runtime-u17CrQMm.js",
+
+        "/assets/chunk-4WY6JWTD-CZjKRnnR.js",
+
+        "/assets/index-NqqQHLOO.js",
+
+        "/assets/client.gen-DQ3fV-1R.js",
+
+        "/assets/QueryClientProvider-CUkuPqX8.js",
+
+        "/assets/useRouter-BYWojqwV.js"
+
+      ],
+
+      "css": [
+
+        "/assets/root-rZsAoWy6.css"
+
+      ]
+
+    },
+
+    "routes/_dashboard": {
+
+      "id": "routes/_dashboard",
+
+      "parentId": "root",
+
+      "hasAction": false,
+
+      "hasLoader": true,
+
+      "hasClientAction": false,
+
+      "hasClientLoader": false,
+
+      "hasClientMiddleware": false,
+
+      "hasErrorBoundary": false,
+
+      "module": "/assets/_dashboard-DvAQKA3l.js",
+
+      "imports": [
+
+        "/assets/chunk-4WY6JWTD-CZjKRnnR.js",
+
+        "/assets/jsx-runtime-u17CrQMm.js",
+
+        "/assets/useUser-CvZGBxG4.js",
+
+        "/assets/dropdown-menu-BuoTGyK6.js",
+
+        "/assets/createReactComponent-BQkwcBKs.js",
+
+        "/assets/translate-DuWSlvJh.js",
+
+        "/assets/IconSettings-ByAuoZDZ.js",
+
+        "/assets/IconPuzzle-xBjjC0JE.js",
+
+        "/assets/tooltip-paWq04JM.js",
+
+        "/assets/cn-BEHD0UYf.js",
+
+        "/assets/index-1gJ03Y-f.js",
+
+        "/assets/index-NqqQHLOO.js",
+
+        "/assets/index-CqEX-Awu.js",
+
+        "/assets/index-BFdU34aF.js",
+
+        "/assets/index-B52uz_EB.js"
+
+      ],
+
+      "css": []
+
+    },
+
+    "routes/_dashboard.runbook.$id": {
+
+      "id": "routes/_dashboard.runbook.$id",
+
+      "parentId": "routes/_dashboard",
+
+      "path": "runbook/:id",
+
+      "hasAction": true,
+
+      "hasLoader": true,
+
+      "hasClientAction": false,
+
+      "hasClientLoader": false,
+
+      "hasClientMiddleware": false,
+
+      "hasErrorBoundary": false,
+
+      "module": "/assets/_dashboard.runbook._id-DKLQzZFH.js",
+
+      "imports": [
+
+        "/assets/chunk-4WY6JWTD-CZjKRnnR.js",
+
+        "/assets/jsx-runtime-u17CrQMm.js",
+
+        "/assets/cn-BEHD0UYf.js",
+
+        "/assets/tooltip-paWq04JM.js",
+
+        "/assets/JSONSchemaForm-CrOHZ605.js",
+
+        "/assets/index-1gJ03Y-f.js",
+
+        "/assets/dropdown-menu-BuoTGyK6.js",
+
+        "/assets/input-V3NTW0LT.js",
+
+        "/assets/label-Cn3EVoAH.js",
+
+        "/assets/popover-OVvo3o-n.js",
+
+        "/assets/select-BLSKHzXh.js",
+
+        "/assets/index-B52uz_EB.js",
+
+        "/assets/Header-DNL28lfG.js",
+
+        "/assets/createReactComponent-BQkwcBKs.js",
+
+        "/assets/plus-JzH8_nWv.js",
+
+        "/assets/chevron-down-B3CbQLru.js",
+
+        "/assets/arrow-right-5y1PkqhK.js",
+
+        "/assets/client.gen-DQ3fV-1R.js",
+
+        "/assets/index-NqqQHLOO.js",
+
+        "/assets/badge-BsUN7bAY.js",
+
+        "/assets/index-CqEX-Awu.js",
+
+        "/assets/QueryClientProvider-CUkuPqX8.js",
+
+        "/assets/AuditLogViewer-C6PMzsbW.js",
+
+        "/assets/IconChevronsRight-BEencwST.js",
+
+        "/assets/useRouter-BYWojqwV.js",
+
+        "/assets/check-yatE5vw6.js",
+
+        "/assets/index-YWQ3D65v.js",
+
+        "/assets/useUser-CvZGBxG4.js",
+
+        "/assets/index-BFdU34aF.js",
+
+        "/assets/envDetection-C7UwCOda.js",
+
+        "/assets/json-view-L_WwL8R5.js",
+
+        "/assets/translate-DuWSlvJh.js",
+
+        "/assets/dates-C20fioLD.js"
+
+      ],
+
+      "css": [
+
+        "/assets/AuditLogViewer-B9Z7D9kT.css"
+
+      ]
+
+    },
+
+    "routes/_index": {
+
+      "id": "routes/_index",
+
+      "parentId": "root",
+
+      "index": true,
+
+      "hasAction": false,
+
+      "hasLoader": true,
+
+      "hasClientAction": false,
+
+      "hasClientLoader": false,
+
+      "hasClientMiddleware": false,
+
+      "hasErrorBoundary": false,
+
+      "module": "/assets/_index-l0sNRNKZ.js",
+
+      "imports": [],
+
+      "css": []
+
+    }
+
+  },
+
+  "url": "/assets/manifest-6cee5f99.js",
+
+  "version": "6cee5f99"
+
+};
+
+  window.__reactRouterRouteModules = {"root":route0,"routes/_dashboard":route1,"routes/_dashboard.runbook.$id":route2};
+
+import("/assets/entry.client-oqJ-MZ6S.js");</script><!--$?--><template id="B:0"></template><!--/$--><script id="_R_">requestAnimationFrame(function(){$RT=performance.now()});</script><div hidden id="S:0"><script>window.__reactRouterContext.streamController.enqueue("[{\"_1\":2,\"_40\":-5,\"_41\":-5},\"loaderData\",{\"_3\":4,\"_22\":23},\"routes/_dashboard\",{\"_5\":6},\"user\",{\"_7\":8,\"_9\":10,\"_11\":12,\"_13\":14,\"_15\":16,\"_17\":8,\"_18\":19,\"_20\":21},\"sub\",\"maxvbuda@gmail.com\",\"iss\",\"https://api.staging.run.so/\",\"aud\",\"api\",\"exp\",1765227827.190107,\"iat\",1764623027.190107,\"email\",\"name\",\"Max Buda\",\"given_name\",\"Max\",\"routes/_dashboard.runbook.$id\",{\"_24\":25,\"_26\":27,\"_28\":29,\"_30\":31,\"_32\":33,\"_34\":35,\"_36\":37,\"_38\":39},\"id\",\"658a8afb-c57c-4c62-af4f-ad73385f495e\",\"version\",15,\"title\",\"New runbook\",\"contents\",\"\u003crunbook\u003e\u003cp\u003ego to \u003ca href=\\\"https://maxvbuda.github.io/bock-bock-chicken/\\\" rel=\\\"noopener noreferrer nofollow\\\" target=\\\"_blank\\\"\u003ehttps://maxvbuda.github.io/bock-bock-chicken/chat-with-peep.html\u003c/a\u003e and chat with him\u003c/p\u003e\u003cp\u003e\u003c/p\u003e\u003cp\u003e\u003crunbook-integration data-configuration-id=\\\"6445e078-7952-4f72-9962-4fb0f32bfc3d\\\" data-integration-type=\\\"browserbase\\\"\u003e\u003c/runbook-integration\u003e\u003c/p\u003e\u003cp\u003e\u003c/p\u003e\u003cp\u003e\u003c/p\u003e\u003cp\u003e\u003c/p\u003e\u003cp\u003e\u003c/p\u003e\u003c/runbook\u003e\",\"created_at\",\"2025-11-04T18:37:54.797658Z\",\"updated_at\",\"2025-11-08T00:06:49.179123Z\",\"latest_agent_revision\",0,\"agent_upto_date\",true,\"actionData\",\"errors\"]\n");</script><!--$?--><template id="B:1"></template><!--/$--></div><script>$RB=[];$RV=function(a){$RT=performance.now();for(var b=0;b<a.length;b+=2){var c=a[b],e=a[b+1];null!==e.parentNode&&e.parentNode.removeChild(e);var f=c.parentNode;if(f){var g=c.previousSibling,h=0;do{if(c&&8===c.nodeType){var d=c.data;if("/$"===d||"/&"===d)if(0===h)break;else h--;else"$"!==d&&"$?"!==d&&"$~"!==d&&"$!"!==d&&"&"!==d||h++}d=c.nextSibling;f.removeChild(c);c=d}while(c);for(;e.firstChild;)f.insertBefore(e.firstChild,c);g.data="$";g._reactRetry&&requestAnimationFrame(g._reactRetry)}}a.length=0};
+
+$RC=function(a,b){if(b=document.getElementById(b))(a=document.getElementById(a))?(a.previousSibling.data="$~",$RB.push(a,b),2===$RB.length&&("number"!==typeof $RT?requestAnimationFrame($RV.bind(null,$RB)):(a=performance.now(),setTimeout($RV.bind(null,$RB),2300>a&&2E3<a?2300-a:$RT+300-a)))):b.parentNode.removeChild(b)};$RC("B:0","S:0")</script><div hidden id="S:1"><script>window.__reactRouterContext.streamController.close();</script></div><script>$RC("B:1","S:1")</script></body></html>
